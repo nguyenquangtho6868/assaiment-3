@@ -31,9 +31,10 @@ mongoose.connection.on("disconnected", () => {
 mongoose.connection.on("connected", () => {
   console.log("mongoDB connected!");
 });
-app.use("/api/auth", authRoute);
-app.use("/api/product", productRoute);
-app.use("/api/user", userRoute);
+
+app.use("/auth", authRoute);
+app.use("/product", productRoute);
+app.use("/user", userRoute);
 app.listen(port, () => {
   connect();
   console.log(`em da lang nge port  ${port}`);
